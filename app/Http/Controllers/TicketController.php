@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ticket;
 
 class TicketController extends Controller
 {
@@ -11,9 +12,13 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $filter='all')
     {
-        //
+        //todo: apply $filter
+        $tickets = Ticket::all();
+        return view('ticket_list',[
+            'tickets'=>$tickets
+        ]);
     }
 
     /**
@@ -23,7 +28,7 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        return view('ticket_create');
     }
 
     /**
@@ -34,7 +39,18 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ticket = new Ticket;
+        $ticket->title = $request->location . "的" . $request->type . "问题";
+        $ticket->type = $request->type;
+        $ticket->location = $request->location;
+        $ticket->priority = $request->priority;
+        $ticket->description = $request->description;
+        $ticket->state = '待确认';
+        $ticket->created_by = 1;
+        
+        $ticket->save();
+        return $this->index('all');
+
     }
 
     /**
@@ -45,7 +61,45 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $ticket = Ticket::find($id);
+        return view('ticket_view',[
+            'ticket'=>$ticket
+        ]);
+    }
+    public function process($id)
+    {
+        $ticket = Ticket::find($id);
+        if ($ticket->state=="待确认") {
+            return view('ticket_assign',[
+                'ticket'=>$ticket
+            ]);    
+        } else if ($ticket->state=="已派单") {
+            return view('ticket_resolve',[
+                'ticket'=>$ticket
+            ]);    
+        } else if ($ticket->state=="已解决") {
+            return view('ticket_rating',[
+                'ticket'=>$ticket
+            ]);    
+        } else {
+            return view('ticket_view',[
+                'ticket'=>$ticket
+            ]);
+        }
+    }
+    public function assign($id)
+    {
+        $ticket = Ticket::find($id);
+        return view('ticket_assign',[
+            'ticket'=>$ticket
+        ]);
+    }
+    public function resolve($id)
+    {
+        $ticket = Ticket::find($id);
+        return view('ticket_resolve',[
+            'ticket'=>$ticket
+        ]);
     }
 
     /**
