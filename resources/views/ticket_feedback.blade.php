@@ -2,6 +2,11 @@
 @section('title','服务评价')
 
 @section('actions')
+<style>
+.fa-star.checked {
+  color: orange;
+}
+</style>
 <div class="form-group">
     <hr />
     <label>您对本次服务综合评价是？</label>

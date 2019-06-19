@@ -78,7 +78,7 @@ class TicketController extends Controller
                 'ticket'=>$ticket
             ]);    
         } else if ($ticket->state=="已解决") {
-            return view('ticket_rating',[
+            return view('ticket_feedback',[
                 'ticket'=>$ticket
             ]);    
         } else {
@@ -86,6 +86,47 @@ class TicketController extends Controller
                 'ticket'=>$ticket
             ]);
         }
+    }
+    //post action
+    public function process_accept(Request $request, $id) {
+        $ticket = Ticket::find($id);
+        $ticket->state="已派单";
+        $ticket->save();
+
+        return view('ticket_view',[
+            'ticket'=>$ticket
+        ]);
+    }
+    //post action
+    public function process_reject(Request $request, $id) {
+        $ticket = Ticket::find($id);
+        $ticket->state="待确认";
+        $ticket->save();
+        
+        return view('ticket_view',[
+            'ticket'=>$ticket
+        ]);
+    }
+    //post action
+    public function process_resolve(Request $request, $id) {
+        $ticket = Ticket::find($id);
+        $ticket->state="已解决";
+        $ticket->save();
+        
+        return view('ticket_view',[
+            'ticket'=>$ticket
+        ]);
+
+    }
+    //post action
+    public function process_feedback(Request $request, $id) {
+        $ticket = Ticket::find($id);
+        $ticket->state="已评价";
+        $ticket->save();
+        
+        return view('ticket_view',[
+            'ticket'=>$ticket
+        ]);
     }
     public function assign($id)
     {
