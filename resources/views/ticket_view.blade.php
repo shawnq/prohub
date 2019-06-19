@@ -35,13 +35,9 @@
     @csrf
     <div class="accordion" id="accordionExample">
         <div class="card">
-            <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <i class="fas fa-info" style="padding-right:0.5rem"></i>基本信息
-                </button>
-            </h2>
-            </div>
+            <button id="headingOne" class="btn btn-lg btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                {{$ticket->title}}
+            </button>
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
