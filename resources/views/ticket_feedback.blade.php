@@ -46,6 +46,23 @@
     <label>服务评语</label>
     <textarea class="form-control" id="inputComment" name="comment" rows="3" ></textarea>
     <br />
-    <button type="button" class="btn btn-success">提交评价</button>
+    <button id="btnFeedback" type="button" class="btn btn-success">提交评价</button>
 </div>
+@endsection
+
+@section('custom_script')
+<script>
+$(document).ready( function () {
+    if (window.innerWidth<640) $("#sidebarToggleTop").click();
+
+    //set type
+    $(".btn.type-selector input[value={{$ticket->type}}]").parent().addClass("selected active");
+    //set priority
+    $("#inputPriority input[value={{$ticket->priority}}]").parent().addClass("selected active");
+    //button actions
+    $("#btnFeedback").click(function() {
+        $('form').attr("action","/ticket_feedback/{{$ticket->id}}").submit();
+    });
+});
+</script>
 @endsection

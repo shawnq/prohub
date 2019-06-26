@@ -164,6 +164,11 @@
 }
 
 </style>
+@isset($msg)
+<div class="alert alert-success" role="alert">
+  {{$msg}}<a href="/ticket_process/{{$ticket->id}}">点此继续处理(仅供演示)</a>
+</div>
+@endisset
 
 <form name='ticket' method="POST" action="/ticket/{{$ticket->id}}" >
     @csrf
@@ -199,7 +204,7 @@
                 </div>
                 <div class="form-group row">
                     <hr />
-                    <label class="col-sm-2 col-form-label">派单人</label>
+                    <label class="col-sm-2 col-form-label">派单员</label>
                     <div class="input-group col-sm-10">
                         <input type="text" class="form-control" value="王经理" readonly>
                         <div class="input-group-append">
@@ -210,7 +215,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">接单人</label>
                     <div class="input-group col-sm-10">
-                        <input type="text" class="form-control" value="吴小双" readonly>
+                        <input type="text" class="form-control" value="张师傅" readonly>
                         <div class="input-group-append">
                             <button class="btn btn-info" type="button"><i class="fas fa-phone"></i></button>
                         </div>
@@ -301,13 +306,13 @@
                     <label for="inputPriority">优先级</label><br />
                     <div id="inputPriority" class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary">
-                        <input type="radio" name="priority" value="高" autocomplete="off"> 紧急
+                        <input type="radio" value="高" autocomplete="off"> 紧急
                     </label>
                     <label class="btn btn-secondary active">
-                        <input type="radio" name="priority" value="中" autocomplete="off" checked> 正常
+                        <input type="radio" value="中" autocomplete="off" checked> 正常
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="priority" value="低" autocomplete="off"> 不急
+                        <input type="radio" value="低" autocomplete="off"> 不急
                     </label>
                     </div>
                 <div>
@@ -321,7 +326,7 @@
                 </div>
                 <div class="form-group">
                     <label for="inputDescription">问题描述</label>
-                    <textarea class="form-control" id="inputDescription" name="description" rows="3" readonly>{{ $ticket->description }}</textarea>
+                    <textarea class="form-control" id="inputDescription" rows="3" readonly>{{ $ticket->description }}</textarea>
                 </div>
             </div>
             </div>

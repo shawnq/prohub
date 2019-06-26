@@ -70,6 +70,10 @@ class TicketController extends Controller
     {
         $ticket = Ticket::find($id);
         if ($ticket->state=="待确认") {
+            return view('ticket_approve',[
+                'ticket'=>$ticket
+            ]);    
+        } else if ($ticket->state=="待派单") {
             return view('ticket_assign',[
                 'ticket'=>$ticket
             ]);    
@@ -88,23 +92,47 @@ class TicketController extends Controller
         }
     }
     //post action
+    public function process_approve(Request $request, $id) {
+        $ticket = Ticket::find($id);
+        $ticket->state="待派单";
+        $ticket->save();
+
+        return view('ticket_view',[
+            'ticket'=>$ticket,
+            'msg'=>'此工单已通过审核确认！'
+        ]);
+    }
+    //post action
+    public function process_cancel(Request $request, $id) {
+        $ticket = Ticket::find($id);
+        $ticket->state="已取消";
+        $ticket->save();
+
+        return view('ticket_view',[
+            'ticket'=>$ticket,
+            'msg'=>'此工单已被取消！'
+        ]);
+    }
+    //post action
     public function process_accept(Request $request, $id) {
         $ticket = Ticket::find($id);
         $ticket->state="已派单";
         $ticket->save();
 
         return view('ticket_view',[
-            'ticket'=>$ticket
+            'ticket'=>$ticket,
+            'msg'=>'此工单已确认接单！'
         ]);
     }
     //post action
     public function process_reject(Request $request, $id) {
         $ticket = Ticket::find($id);
-        $ticket->state="待确认";
+        $ticket->state="待派单";
         $ticket->save();
         
         return view('ticket_view',[
-            'ticket'=>$ticket
+            'ticket'=>$ticket,
+            'msg'=>'此工单已被退回！'
         ]);
     }
     //post action
@@ -114,32 +142,30 @@ class TicketController extends Controller
         $ticket->save();
         
         return view('ticket_view',[
-            'ticket'=>$ticket
+            'ticket'=>$ticket,
+            'msg'=>'此工单已完成！'
         ]);
-
+    }    
+    //post action
+    public function process_reschedule(Request $request, $id) {
+        $ticket = Ticket::find($id);
+        $ticket->state="已派单";
+        $ticket->save();
+        
+        return view('ticket_view',[
+            'ticket'=>$ticket,
+            'msg'=>'此工单已安排改期！'
+        ]);
     }
     //post action
     public function process_feedback(Request $request, $id) {
         $ticket = Ticket::find($id);
-        $ticket->state="已评价";
+        $ticket->state="已完成";
         $ticket->save();
         
         return view('ticket_view',[
-            'ticket'=>$ticket
-        ]);
-    }
-    public function assign($id)
-    {
-        $ticket = Ticket::find($id);
-        return view('ticket_assign',[
-            'ticket'=>$ticket
-        ]);
-    }
-    public function resolve($id)
-    {
-        $ticket = Ticket::find($id);
-        return view('ticket_resolve',[
-            'ticket'=>$ticket
+            'ticket'=>$ticket,
+            'msg'=>'此工单已评价！'
         ]);
     }
 

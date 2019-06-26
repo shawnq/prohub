@@ -20,12 +20,13 @@ Route::get('/dashboard', function () {
 Route::get('/ticket', 'TicketController@create');
 Route::get('/ticket/{id}', 'TicketController@show');
 Route::get('/ticket_process/{id}', 'TicketController@process');
+Route::post('/ticket_approve/{id}', 'TicketController@process_approve');
+Route::post('/ticket_cancel/{id}', 'TicketController@process_cancel');
 Route::post('/ticket_accept/{id}', 'TicketController@process_accept');
 Route::post('/ticket_reject/{id}', 'TicketController@process_reject');
 Route::post('/ticket_resolve/{id}', 'TicketController@process_resolve');
+Route::post('/ticket_reschedule/{id}', 'TicketController@process_reschedule');
 Route::post('/ticket_feedback/{id}', 'TicketController@process_feedback');
-//Route::get('/ticket_assign/{id}', 'TicketController@assign');
-//Route::get('/ticket_resolve/{id}', 'TicketController@resolve');
 Route::get('/ticket_modify/{id}', 'TicketController@edit');
 Route::post('/ticket', 'TicketController@store');
 Route::get('/ticket-{filter}', 'TicketController@index');

@@ -1,19 +1,14 @@
 @extends('ticket_view')
-@section('title','分派工单')
+@section('title','确认工单')
 
 @section('actions')
 <div class="form-group">
     <hr />
-    <label>上门时间</label>
-    <input type="datetime-local" class="form-control" id="inputDate" placeholder="请与客户确认">
-</div>
-<div class="form-group">
-    <label for="inputComment">处理备注</label>
+    <label>审批意见</label>
     <textarea class="form-control" id="inputComment" name="comment" rows="3"></textarea>
     <br />
-    <button id="btnAccept" type="button" class="btn btn-success">接受工单</button>
-    <button id="btnForward" type="button" class="btn btn-primary">派单委托</button>
-    <button id="btnCancel" type="button" class="btn btn-danger">关闭工单</button>
+    <button id="btnApprove" type="button" class="btn btn-success">确认工单</button>
+    <button id="btnCancel" type="button" class="btn btn-danger">撤销工单</button>
 </div>
 
 @endsection
@@ -28,15 +23,15 @@ $(document).ready( function () {
     //set priority
     $("#inputPriority input[value={{$ticket->priority}}]").parent().addClass("selected active");
     //button actions
-    $("#btnAccept").click(function() {
-        $('form').attr("action","/ticket_accept/{{$ticket->id}}").submit();
+    $("#btnApprove").click(function() {
+        $('form').attr("action","/ticket_approve/{{$ticket->id}}").submit();
     });
-    $("#btnForward").click(function() {
-        alert("请在'↗'菜单中点击分享");
-    });
+    //button actions
     $("#btnCancel").click(function() {
         $('form').attr("action","/ticket_cancel/{{$ticket->id}}").submit();
     });
+
+    $('#headingTwo .btn').click()
 });
 </script>
 @endsection
