@@ -46,9 +46,13 @@
       <li class="nav-item active">
         <a class="nav-link" href="/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>监控仪表</span></a>
+          <span>运营监控</span></a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link" href="/enviroment">
+          <i class="fas fa-fw fa-thermometer-half"></i>
+          <span>环境监控</span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -117,13 +121,13 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        设备管理
+        园区配置
       </div>
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="/cam">
           <i class="fas fa-fw fa-video"></i>
-          <span>监控管理</span></a>
+          <span>传感器</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
