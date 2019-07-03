@@ -13,50 +13,19 @@
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card border-left-danger shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">温度</div>
+                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">温度</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">26.3℃</div>
-                </div>
-                <div class="col">
-                    <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: 36%" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">28.3℃</div>
                 </div>
                 </div>
             </div>
             <div class="col-auto">
-                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">二氧化碳</div>
-                <div class="row no-gutters align-items-center">
-                <div class="col-auto">
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">438ppm</div>
-                </div>
-                <div class="col">
-                    <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 86%" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-auto">
-                <i class="fas fa-bolt fa-2x text-gray-300"></i>
+                <i class="fas fa-thermometer-half fa-2x text-gray-300"></i>
             </div>
             </div>
         </div>
@@ -69,15 +38,10 @@
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">PM2.5</div>
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">湿度</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">23μg/m³</div>
-                </div>
-                <div class="col">
-                    <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">61%</div>
                 </div>
                 </div>
             </div>
@@ -89,17 +53,38 @@
         </div>
     </div>
 
-    <!-- Pending Requests Card Example -->
+    <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">湿度</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">62%</div>
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">PM2.5</div>
+                <div class="row no-gutters align-items-center">
+                <div class="col-auto">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">23μg/m³</div>
+                </div>
+                </div>
             </div>
             <div class="col-auto">
-                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                <i class="fas fa-smog fa-2x text-gray-300"></i>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">CO<sub>2</sub></div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">738ppm</div>
+            </div>
+            <div class="col-auto">
+                <i class="fas fa-leaf fa-2x text-gray-300"></i>
             </div>
             </div>
         </div>
@@ -134,85 +119,85 @@
             <h5>主楼</h5>
             <div class="row">
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">1层大厅<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">29.3℃</div>
+                        <div class="col">61%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">29μg/m³</div>
+                        <div class="col">428ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">1层楼道<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
-                        <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
+                        <div class="col">28.9℃</div>
                         <div class="col">62%</div>
+                        <div class="w-100"></div>
+                        <div class="col">28μg/m³</div>
+                        <div class="col">433ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">101教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">26.8℃</div>
+                        <div class="col">43%</div>
                         <div class="w-100"></div>
                         <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">572ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">102教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">26.1℃</div>
+                        <div class="col">45%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">21μg/m³</div>
+                        <div class="col">746ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">103教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">27.2℃</div>
+                        <div class="col">44%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">25μg/m³</div>
+                        <div class="col">820ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">104教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">26.6℃</div>
+                        <div class="col">41%</div>
                         <div class="w-100"></div>
                         <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">895ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-dark m-2" style="width: 10rem">
+            <div class="card border-dark m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-dark">阶梯教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
@@ -227,160 +212,160 @@
             </div>
             <div class="row">
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">2层楼道<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">29.8℃</div>
+                        <div class="col">63%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">26μg/m³</div>
+                        <div class="col">452ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">201教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">26.5℃</div>
+                        <div class="col">44%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">24μg/m³</div>
+                        <div class="col">672ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">202教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">27.3℃</div>
+                        <div class="col">45%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">22μg/m³</div>
+                        <div class="col">725ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">203教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">27.1℃</div>
+                        <div class="col">39%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">21μg/m³</div>
+                        <div class="col">809ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">204教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">27.8℃</div>
+                        <div class="col">42%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">19μg/m³</div>
+                        <div class="col">856ppm</div>
                     </div>
                 </div>
             </div>
             </div>
             <div class="row">
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
-                <div class="card-header p-3 text-white bg-success">3层楼道<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
+            <div class="card border-warning m-2" style="width: 11rem">
+                <div class="card-header p-3 text-white bg-warning">3层楼道<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col text-warning">31.3℃</div>
+                        <div class="col">60%</div>
                         <div class="w-100"></div>
                         <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">473ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">301教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">28.1℃</div>
+                        <div class="col">38%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">18μg/m³</div>
+                        <div class="col">965ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
-                <div class="card-header p-3 text-white bg-success">302教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
+            <div class="card border-warning m-2" style="width: 11rem">
+                <div class="card-header p-3 text-white bg-warning">302教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col text-warning">30.5℃</div>
+                        <div class="col">41%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">22μg/m³</div>
+                        <div class="col text-warning">1027ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
+            <div class="card border-success m-2" style="width: 11rem">
                 <div class="card-header p-3 text-white bg-success">303教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col">29.6℃</div>
+                        <div class="col">35%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">20μg/m³</div>
+                        <div class="col">965ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
-                <div class="card-header p-3 text-white bg-success">304教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
+            <div class="card border-warning m-2" style="width: 11rem">
+                <div class="card-header p-3 text-white bg-warning">304教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col text-warning">30.4℃</div>
+                        <div class="col">42%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">17μg/m³</div>
+                        <div class="col">876ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
-                <div class="card-header p-3 text-white bg-success">305教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
+            <div class="card border-warning m-2" style="width: 11rem">
+                <div class="card-header p-3 text-white bg-warning">305教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col text-warning">31.2℃</div>
+                        <div class="col">41%</div>
                         <div class="w-100"></div>
-                        <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">19μg/m³</div>
+                        <div class="col">833ppm</div>
                     </div>
                 </div>
             </div>
             <!--Unit Card-->
-            <div class="card border-success m-2" style="width: 10rem">
-                <div class="card-header p-3 text-white bg-success">306教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
+            <div class="card border-warning m-2" style="width: 11rem">
+                <div class="card-header p-3 text-white bg-warning">306教室<a class="float-right" herf="#"><i class="fas fa-power-off fa-sm"></i></a></div>
                 <div class="card-body p-2">
                     <div class="row">
-                        <div class="col">26.3℃</div>
-                        <div class="col">438ppm</div>
+                        <div class="col text-warning">30.9℃</div>
+                        <div class="col">40%</div>
                         <div class="w-100"></div>
                         <div class="col">23μg/m³</div>
-                        <div class="col">62%</div>
+                        <div class="col">962ppm</div>
                     </div>
                 </div>
             </div>
