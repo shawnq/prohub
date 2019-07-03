@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::get('/environment', function () {
+    return view('environment');
+});
 Route::get('/ticket', 'TicketController@create');
 Route::get('/ticket/{id}', 'TicketController@show');
 Route::get('/ticket_process/{id}', 'TicketController@process');

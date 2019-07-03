@@ -49,7 +49,7 @@
           <span>运营监控</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/enviroment">
+        <a class="nav-link" href="/environment">
           <i class="fas fa-fw fa-thermometer-half"></i>
           <span>环境监控</span></a>
       </li>
