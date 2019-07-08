@@ -49,7 +49,7 @@ class TicketController extends Controller
         $ticket->created_by = 1;
         
         $ticket->save();
-        return $this->index('all');
+        return redirect("/ticket-all");
 
     }
 
