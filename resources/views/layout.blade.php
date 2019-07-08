@@ -63,7 +63,7 @@
 
       <!-- Nav Item - 创建工单 -->
       <li class="nav-item">
-        <a class="nav-link" href="/ticket">
+        <a class="nav-link" href="/ticket/new">
           <i class="fas fa-fw fa-plus-circle"></i>
           <span>创建工单</span></a>
       </li>
@@ -81,8 +81,8 @@
             <a class="collapse-item" href="/ticket-all">全部</a>
             <a class="collapse-item" href="/ticket-todo">待处理</a>
             <a class="collapse-item" href="/ticket-active">处理中</a>
-            <a class="collapse-item" href="/ticket-todo">已完成</a>
-            <a class="collapse-item" href="/ticket-todo">已关闭</a>
+            <a class="collapse-item" href="/ticket-complete">已完成</a>
+            <a class="collapse-item" href="/ticket-closed">已关闭</a>
           </div>
         </div>
       </li>

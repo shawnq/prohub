@@ -24,11 +24,11 @@ $(document).ready( function () {
     $("#inputPriority input[value={{$ticket->priority}}]").parent().addClass("selected active");
     //button actions
     $("#btnApprove").click(function() {
-        $('form').attr("action","/ticket_approve/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/approve").submit();
     });
     //button actions
     $("#btnCancel").click(function() {
-        $('form').attr("action","/ticket_cancel/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/cancel").submit();
     });
 
     $('#headingTwo .btn').click()

@@ -26,8 +26,8 @@
             @foreach ($tickets as $ticket)
             <tr>
                 <td>{{$ticket->id}}</td>
-                <td><a href="/ticket_process/{{$ticket->id}}">{{$ticket->title}}</a></td>
-                <td><a href="/ticket_process/{{$ticket->id}}" class="btn">{{$ticket->state}}<a></td>
+                <td><a href="/ticket/{{$ticket->id}}/process">{{$ticket->title}}</a></td>
+                <td><a href="/ticket/{{$ticket->id}}/process" class="btn">{{$ticket->state}}<a></td>
                 <td>{{$ticket->priority}}</td>
                 <td>{{$ticket->created_by}}</td>
             </tr>

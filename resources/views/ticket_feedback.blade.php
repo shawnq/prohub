@@ -61,7 +61,7 @@ $(document).ready( function () {
     $("#inputPriority input[value={{$ticket->priority}}]").parent().addClass("selected active");
     //button actions
     $("#btnFeedback").click(function() {
-        $('form').attr("action","/ticket_feedback/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/feedback").submit();
     });
 });
 </script>

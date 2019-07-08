@@ -29,13 +29,13 @@ $(document).ready( function () {
     $("#inputPriority input[value={{$ticket->priority}}]").parent().addClass("selected active");
     //button actions
     $("#btnAccept").click(function() {
-        $('form').attr("action","/ticket_accept/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/accept").submit();
     });
     $("#btnForward").click(function() {
         alert("请在'↗'菜单中点击分享");
     });
     $("#btnCancel").click(function() {
-        $('form').attr("action","/ticket_cancel/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/cancel").submit();
     });
 });
 </script>

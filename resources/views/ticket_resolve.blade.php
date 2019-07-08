@@ -56,13 +56,13 @@ $(document).ready( function () {
     $("#inputPriority input[value={{$ticket->priority}}]").parent().addClass("selected active");
     //button actions
     $("#btnResolve").click(function() {
-        $('form').attr("action","/ticket_resolve/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/resolve").submit();
     });
     $("#btnReschedule").click(function() {
-        $('form').attr("action","/ticket_reschedule/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/reschedule").submit();
     });
     $("#btnReject").click(function() {
-        $('form').attr("action","/ticket_reject/{{$ticket->id}}").submit();
+        $('form').attr("action","/ticket/{{$ticket->id}}/reject").submit();
     });
 });
 </script>
