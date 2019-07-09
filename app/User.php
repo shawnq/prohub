@@ -41,4 +41,55 @@ class User extends Authenticatable
     public function roles() {
         return $this->belongsToMany('App\Role','user_role');
     }
+
+    // check if user has a sub-role to any of $role
+    public function hasSubRole($role) {
+        if (!$role) return true; //check nothing
+
+        // create array
+        if (is_array($role)) {
+            $roles=$role;
+        } else {
+            $roles=array($role);
+        }
+        // check roles
+        foreach($this->roles() as $user_role) {
+            foreach($roles as $role) {
+                if ($role===$user_role || substr($user_role,0,strlen($role)+1)===$role.'/') {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // check if user has super-role to any of $role
+    public function hasSuperRole($role) {
+        // create array
+        if (is_array($role)) {
+            $roles=$role;
+        } else {
+            $roles=array($role);
+        }
+        // push super roles
+        $len=count($roles);
+        for ($i=0;$i<$len;$i++) {
+            $segs=explode('/', $roles[$i]);
+            $super=$segs[0];
+            for ($j=1; $j<count($segs); $j++) {
+                if (!in_array($super,$roles)) {
+                    array_push($roles,$super);
+                }
+                $super.='/'.$segs[$j];
+            }
+        }
+        // check roles
+        foreach ($roles as $role) {
+            if ($this->roles()->where('name',$role)->first()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
