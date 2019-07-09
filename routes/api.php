@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/ticket', 'TicketApiController@index');
-Route::post('/ticket', 'TicketApiController@store');
-Route::get('/ticket/{id}', 'TicketApiController@show');
+Route::middleware('checkrole')->get('/ticket', 'TicketApiController@index');
+Route::middleware('checkrole')->post('/ticket', 'TicketApiController@store');
+Route::middleware('checkrole')->get('/ticket/{id}', 'TicketApiController@show');
