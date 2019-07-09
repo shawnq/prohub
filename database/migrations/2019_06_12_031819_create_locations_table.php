@@ -17,8 +17,10 @@ class CreateLocationsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('label');
+            $table->text('description');
             $table->string('path');
             $table->bigInteger('parent_id');
+            $table->bigInteger('subscription_id');
         });
     }
 

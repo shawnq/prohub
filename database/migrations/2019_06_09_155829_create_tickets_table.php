@@ -21,7 +21,7 @@ class CreateTicketsTable extends Migration
             $table->string('location');
             $table->string('state');
             $table->string('priority');
-            $table->decimal('amount', 9, 2)->nullable();
+            $table->decimal('charge', 9, 2)->nullable();
             $table->bigInteger('created_by');
             $table->bigInteger('assigned_to')->nullable();
             $table->text('description')->nullable();

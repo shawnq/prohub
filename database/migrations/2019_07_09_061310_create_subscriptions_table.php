@@ -16,6 +16,10 @@ class CreateSubscriptionsTable extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->decimal('budget',9,2)->nullable();
+            $table->softDeletes();
         });
     }
 
