@@ -20,7 +20,7 @@
                 <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">温度</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">28.3℃</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{number_format($tmp,1)}}℃</div>
                 </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">湿度</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">61%</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{number_format($hum,0)}}%</div>
                 </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">PM2.5</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">23μg/m³</div>
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{number_format($pm25,0)}}μg/m³</div>
                 </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">CO<sub>2</sub></div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">738ppm</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{number_format($co2,0)}}ppm</div>
             </div>
             <div class="col-auto">
                 <i class="fas fa-leaf fa-2x text-gray-300"></i>
