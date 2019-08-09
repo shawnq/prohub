@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Redis;
 
 class SensorController extends Controller
 {
+    private function hset(string $key, array $map) {
+        foreach ($map as $k => $v) {
+            Redis::hset($key,$k,$v);
+        }
+    }
     /**
      * Update demo chip metrics.
      *
@@ -17,16 +22,16 @@ class SensorController extends Controller
     {
         //$id=$request->id?$request->id:"0";
         if ($request->random) {
-            Redis::hset("sensor:env:".$id,[
+            $this->hset("sensor:env:".$id,[
                 "ts" => "",
                 "tmp" => rand(150,340)/10.0,
                 "hum" => rand(30,70),
                 "voc" => rand(0,30),
                 "co2" => rand(445,1500),
-                "pm25" => rand(0,500)
+                "pm25" => rand(0,200)
             ]);
         } else {
-            Redis::hset("sensor:env:".$id,[
+            $this->hset("sensor:env:".$id,[
                 "ts" => $request->ts,
                 "tmp" => $request->tmp,
                 "hum" => $request->hum,

@@ -18,7 +18,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 Route::get('/environment', function () {
-    return view('environment', Redis::hget("sensor:env:0"));
+    $data=Redis::hGetAll("sensor:env:0");
+    return view('environment', ["sensor"=>$data]);
 });
 Route::get('/ticket/new', 'TicketController@create');
 Route::get('/ticket/{id}', 'TicketController@show');
