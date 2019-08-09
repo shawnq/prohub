@@ -3,6 +3,7 @@ $font-family-base: Nunito;
 $font-size-base: 0.95rem;
 $badge-font-size: 0.95rem;
 
+
 $primary: #7746ec;
 $secondary: #dae1e7;
 $success: #51d88a;
@@ -38,6 +39,7 @@ $new-entries-bg: #fffee9;
 
 $control-action-icon-color: #ccd2df;
 
+
 $grid-breakpoints: (
     xs: 0,
     sm: 2px,
@@ -53,4 +55,8 @@ $container-max-widths: (
     xl: 1140px
 ) !default;
 
-@import 'base';
+//@import 'base';
+
+[v-cloak] {
+    display: none;
+}

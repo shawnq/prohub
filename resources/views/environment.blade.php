@@ -2,6 +2,7 @@
 @section('title','环境监控')
 
 @section('content')
+<div id="app">
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">环境监控</h1>
@@ -20,7 +21,7 @@
                 <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">温度</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{number_format($sensor["tmp"],1)}}℃</div>
+                    <div v-cloak class="h5 mb-0 font-weight-bold text-gray-800">@{{sensor.tmp}}℃</div>
                 </div>
                 </div>
             </div>
@@ -41,7 +42,7 @@
                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">湿度</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{number_format($sensor["hum"],0)}}%</div>
+                    <div v-cloak class="h5 mb-0 font-weight-bold text-gray-800">@{{sensor.hum}}%</div>
                 </div>
                 </div>
             </div>
@@ -62,7 +63,7 @@
                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">PM2.5</div>
                 <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{number_format($sensor["pm25"],0)}}μg/m³</div>
+                    <div v-cloak class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@{{sensor.pm25}}μg/m³</div>
                 </div>
                 </div>
             </div>
@@ -81,7 +82,7 @@
             <div class="row no-gutters align-items-center">
             <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">CO<sub>2</sub></div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">{{number_format($sensor["co2"],0)}}ppm</div>
+                <div v-cloak class="h5 mb-0 font-weight-bold text-gray-800">@{{sensor.co2}}ppm</div>
             </div>
             <div class="col-auto">
                 <i class="fas fa-leaf fa-2x text-gray-300"></i>
@@ -377,10 +378,9 @@
     </div>
 
 </div>
+</div>
 @endsection
 
 @section('custom_script')
-<!-- Page level plugins -->
-<script src="js/app.js"></script>
-
+    <script src="/js/env.js"></script>
 @endsection

@@ -22,5 +22,5 @@ Route::post('/ticket', 'TicketApiController@store');
 Route::get('/ticket/{id}', 'TicketApiController@show');
 
 Route::post('/sensor/env/{id}', 'SensorController@update');
-Route::post('/sensor/env/update/{id}', 'SensorController@update');
+Route::get('/sensor/env/update/{id}', 'SensorController@update');
 Route::get('/sensor/env/{id}', 'SensorController@show');
