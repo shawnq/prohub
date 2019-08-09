@@ -1,53 +1,40 @@
-import Vue from 'vue';
-import Base from './base';
-import _ from 'lodash';
-import axios from 'axios';
-import Routes from './routes';
-import VueRouter from 'vue-router';
-import VueJsonPretty from 'vue-json-pretty';
-import moment from 'moment-timezone';
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
 
-require('bootstrap');
+require('jquery'); 
+require('jquery.easing');
+require('./bootstrap');
+require('startbootstrap-sb-admin-2/js/sb-admin-2.js');
+require('@fortawesome/fontawesome-free');
+//require('datatables.net');
+//require('datatables.net-bs4');
+//require('chart.js'); 
 
-let token = document.head.querySelector('meta[name="csrf-token"]');
 
-if (token) {
-    axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-}
+//window.Vue = require('vue');
 
-Vue.use(VueRouter);
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
 
-window.Popper = require('popper.js').default;
+// const files = require.context('./', true, /\.vue$/i);
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.prototype.$http = axios.create();
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-const router = new VueRouter({
-    routes: Routes,
-    mode: 'history',
-    base: '/' + window.Horizon.path + '/',
-});
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
-Vue.component('vue-json-pretty', VueJsonPretty);
-Vue.component('alert', require('./components/Alert.vue').default);
-
-Vue.mixin(Base);
-
-new Vue({
-    el: '#horizon',
-
-    router,
-
-    data() {
-        return {
-            alert: {
-                type: null,
-                autoClose: 0,
-                message: '',
-                confirmationProceed: null,
-                confirmationCancel: null,
-            },
-
-            autoLoadsNewEntries: localStorage.autoLoadsNewEntries === '1',
-        };
-    },
-});
+//const app = new Vue({
+//    el: '#app',
+//});

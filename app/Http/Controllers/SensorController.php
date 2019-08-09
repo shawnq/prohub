@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use function GuzzleHttp\json_encode;
 
 class SensorController extends Controller
 {
@@ -40,5 +41,8 @@ class SensorController extends Controller
                 "pm25" => $request->pm25
             ]);
         }
+    }
+    public function show(string $id) {
+        return json_encode(Redis::hGetAll("sensor:env:".$id));
     }
 }
